@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Theme "page__simplelogin" template.
+ *
+ * @see simplelogin_preprocess_simplelogin()
+ * @see simplelogin_theme_registry_alter()
+ */
+#}
+
+<style>
+  #block-moby2buy-page-title,
+  nav.tabs {
+    display: none;
+  }
+</style>
+
+{% spaceless %}
+  <div class="simplelogin-wrapper {{ background_class }} {{ background_opacity }}">
+    <div class="simplelogin-form" style="width: {{ wrapper_width }}px">
+      <div class="simplelogin-link">
+        {% if path == '/user/password' %}
+          <a href="{{ base_path }}user/login" class="signreg">{{ 'Login'|t }}</a>
+        {% elseif path == '/user/register' %}
+          <a href="{{ base_path }}user/login" class="signreg">{{ 'Login'|t }}</a>
+        {% else %}
+          {% if site_register != 'admin_only' %}
+            <a href="{{ base_path }}user/register" class="signreg">{{ 'Sign up'|t }}</a>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      <div class="simplelogin-bg">
+        <div class="simplelogin-logo" style="background-color: #05122e;">
+          <a href="{{ base_path }}"><img src="{{ logo }}" alt="Home"/></a>
+        </div>
+
+        <div class="alert alert-success mt-2">
+          <p><strong>Warning</strong> use details below to login </p>
+          <ul>
+            <li><strong>User:</strong> moby</li>
+            <li><strong>Pass:</strong> moby</li>
+          </ul>
+          
+        </div>
+
+        {{ page.highlighted }}
+        {{ page.content }}
+ 
+        {% if path == '/user/login' %}
+          <div class="forgot-password">
+            {{ 'Forgot password?'|t }} <a href="{{ base_path }}user/password">{{ 'Click here'|t }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endspaceless %}

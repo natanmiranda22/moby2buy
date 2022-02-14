@@ -1,0 +1,81 @@
+/**
+ * @file
+ * Moby2BuyNtN simple drupal 9 theme
+ * Its a just front end test by Natan
+ */
+
+/* Global */
+body, p, a, li {
+    font-family: 'Dosis', serif;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+  }  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+  }  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff;
+  }
+
+
+ /* Navbar */
+ .navbar {
+    background-color: rgba(1,18,45,0.8); 
+    overflow: hidden;
+ }
+ .navbar .social a {
+     font-size: 2rem;
+ }
+
+ /* Site Banner */
+.site-banner {
+    height: 100vh;
+    background-image: url(../bg-banner.jpg);
+    background-repeat: no-repeat;
+    background-size: co;
+}
+.site-banner .hello h1 span {
+    color: #ffc107;
+}
+.site-banner .hello h2 span {
+    color: #1989E9;
+}
+
+/* Shorten url tool form */
+;.shurly-create-form input {
+    width: 100%;
+}
+.shurly-create-form input,
+.shurly-create-form .form-control:disabled, 
+.shurly-create-form .form-control[readonly],
+.shurly-create-form .form-control:focus {
+    min-height: 50px;
+    background-color: #1E3D6E;
+    border: 1px solid #648AC7;
+    padding-left: 20px;
+    color: #fff;
+    margin-bottom: 0;
+}
+.shurly-create-form .input-group-prepend .input-group-text {
+    min-height: 50px;
+    background-color: #1E3D6E;
+    border: 1px solid #648AC7;
+    color: #fff;
+}
+.shurly-create-form .form-actions {
+    margin-top: 1rem;
+    text-align: center;
+}
+.shurly-create-form .form-actions .btn {
+    min-height: 50px;
+}
+.shurly-create-form .details-wrapper {
+    padding: 1rem 0;
+}
+
+/* Site Content */
+.site-content {
+    height: 100vh;
+}

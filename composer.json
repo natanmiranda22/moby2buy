@@ -12,7 +12,16 @@
         "composer/installers": "^1.9",
         "drupal/core": "self.version",
         "drupal/core-project-message": "self.version",
-        "drupal/core-vendor-hardening": "self.version"
+        "drupal/core-vendor-hardening": "self.version",
+        "drush/drush": "^10.6",
+        "drupal/bootstrap_barrio": "^5.5",
+        "drupal/admin_toolbar": "^3.1",
+        "drupal/shurly": "^1.0@beta",
+        "drupal/token": "^1.10",
+        "drupal/pathauto": "^1.8",
+        "drupal/simplify_menu": "^2.1",
+        "drupal/simplelogin": "^6.0",
+        "drupal/twig_tweak": "^3.1"
     },
     "require-dev": {
         "behat/mink": "^1.8",

@@ -1,0 +1,65 @@
+<div class="moby2buy-site">
+  <div class="site-header">
+    <div class="container">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-moby">
+        <a class="navbar-brand" href="{{ path('<front>') }}"><img src="{{ logopath }}"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ path('<front>') }}">Generate short URL <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('<front>') }}myurls">My URLs</a>
+            </li>
+          </ul>
+          <div class="form-inline social my-2 my-lg-0">
+            <a href="#" class="px-3"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>{# collpse #}
+      </nav>{# navbar #}
+    </div>{# container #}
+  </div>{# site-header #}
+  {% if is_front %}
+  <div class="site-banner">
+    <div class="container h-100 d-flex justify-content-center align-items-center">
+      <div class="shorten-box">
+        <div class="hello text-center">
+          <h1>Hello, <span>everyone</span>!</h1>
+          <h2>Welcome 2 new <span>shorten url</span> tool</h2>
+          <h3>Enjoy it!</h3>
+        </div>{# hello #}
+        <div class="py-4">
+          {{ drupal_entity('block', 'shorturlform') }}
+        </div>
+        <div class="text-center">
+          {% if logged_in %}
+          <h5>You are logged in as {{ user.displayname }}. <a href="{{ path('<front>') }}user/logout">Logout now?</a> </h5>
+          {% else %}
+          <h5>* You need to login for view your generated URL's and create custom URL's. <a href="{{ path('<front>') }}user">Login now</a> </h5>
+          {% endif %}
+        </div>       
+      </div>{# flex #}      
+    </div>{# container #}
+  </div>{# site-banner #}
+  {% else %}
+  <div class="site-content">
+    <div class="container h-100 d-flex justify-content-center align-items-center">
+      <section class="section">
+        {{ page.content }}
+      </section>{# main #}
+    </div>{# container #}
+  </div>{# site-content #}
+  {% endif %}
+  <div class="site-footer">
+    <div class="container">
+      <section class="section">
+        {{ page.footer_first }}
+      </section>{# main #}
+    </div>{# container #}  
+  </div>{# site-footer #}
+</div>{# page #}
